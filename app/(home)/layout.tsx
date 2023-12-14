@@ -1,9 +1,9 @@
-import Navbar from "./_components/navbar";
+import Nav from "./_components/navbar";
 
 const HomePageLayout = ({ children }: { children: React.ReactNode }) => {
   return (
-    <div className="h-full dark:bg-[#1F1F1F]">
-      <Navbar />
+    <div className="h-full ">
+      <Nav />
       <main className="h-full pt-10">{children}</main>
     </div>
   );
