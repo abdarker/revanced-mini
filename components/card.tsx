@@ -1,4 +1,3 @@
-"use client";
 import { getLogoUrl, toTitleCase } from "@/lib/util";
 import {
   Card,
@@ -67,9 +66,11 @@ const InfoCard: React.FC<CardProps> = ({ data }) => {
           src={iconUrl}
           width={40}
         />
-        <div className="flex flex-col">
-          <p className="text-md">{appName} </p>
-          <p className="text-small text-default-500">{appVersion}</p>
+        <div className="flex flex-col flex-1">
+          <p className="text-base">{data?.name} </p>
+          <p className="text-sm text-default-400">
+            {Math.round(data?.size / 1024 / 1024)} MB
+          </p>
         </div>
       </CardHeader>
       <Divider />
