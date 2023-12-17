@@ -4,7 +4,7 @@ const HomePageLayout = ({ children }: { children: React.ReactNode }) => {
   return (
     <div className="h-full ">
       <Nav />
-      <main className="h-full pt-10">{children}</main>
+      <main className="h-full pt-6">{children}</main>
     </div>
   );
 };

@@ -5,9 +5,9 @@ import Footer from "./_components/footer";
 
 const HomePage = () => {
   return (
-    <div className="min-h-full flex flex-col dark:bg-[#1F1F1F] ">
+    <div className="min-h-full flex flex-col  ">
       <div className="container mx-auto">
-        <div className="flex flex-col gap-y-6 flex-1 px-6 pb-10 ">
+        <div className="flex flex-col gap-y-6 flex-1 px-6 pb-6 ">
           <InfoCard />
           <InfoCard />
           <InfoCard />
