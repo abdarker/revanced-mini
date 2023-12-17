@@ -1,3 +1,5 @@
+"use client";
+import { getLogoUrl, toTitleCase } from "@/lib/util";
 import {
   Card,
   CardHeader,
@@ -8,20 +10,66 @@ import {
   Image,
 } from "@nextui-org/react";
 
-const InfoCard = () => {
+interface PageData {
+  url: string;
+  id: number;
+  node_id: string;
+  name: string;
+  label: string;
+  uploader: {
+    login: string;
+    id: number;
+    node_id: string;
+    avatar_url: string;
+    gravatar_id: string;
+    url: string;
+    html_url: string;
+    followers_url: string;
+    following_url: string;
+    gists_url: string;
+    starred_url: string;
+    subscriptions_url: string;
+    organizations_url: string;
+    repos_url: string;
+    events_url: string;
+    received_events_url: string;
+    type: string;
+    site_admin: boolean;
+  };
+  content_type: string;
+  state: string;
+  size: number;
+  download_count: number;
+  created_at: string;
+  updated_at: string;
+  browser_download_url: string;
+}
+
+interface CardProps {
+  data: PageData;
+}
+const InfoCard: React.FC<CardProps> = ({ data }) => {
+  const extractedNames: string[] | undefined = data?.name.split("-");
+  const appName: string = extractedNames
+    ? toTitleCase(extractedNames[0] + " " + extractedNames[1])
+    : "";
+  const appVersion: string = extractedNames ? extractedNames[2] : "";
+  const iconType: string = extractedNames ? extractedNames[0] : "";
+  const iconUrl: string = getLogoUrl(iconType);
+
   return (
-    <Card className="" >
+    <Card className="">
       <CardHeader className="flex gap-3">
         <Image
-          alt="nextui logo"
+          alt={iconType}
           height={40}
           radius="sm"
-          src="https://avatars.githubusercontent.com/u/86160567?s=200&v=4"
+          src={iconUrl}
           width={40}
         />
         <div className="flex flex-col">
-          <p className="text-md">NextUI</p>
-          <p className="text-small text-default-500">nextui.org</p>
+          <p className="text-md">{appName} </p>
+          <p className="text-small text-default-500">{appVersion}</p>
         </div>
       </CardHeader>
       <Divider />
