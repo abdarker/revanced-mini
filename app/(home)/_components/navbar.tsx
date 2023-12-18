@@ -10,7 +10,6 @@ import {
   NavbarContent,
   NavbarItem,
   Link,
-  Button,
 } from "@nextui-org/react";
 import Logo from "./logo";
 import ThemeSwitch from "./themetoggle";
@@ -35,9 +34,9 @@ const Nav = () => {
       maxWidth="xl"
     >
       <NavbarContent className="sm:hidden" justify="start">
-        <NavbarMenuToggle
+        {/* <NavbarMenuToggle
           aria-label={isMenuOpen ? "Close menu" : "Open menu"}
-        />
+        /> */}
         <NavbarBrand>
           <Logo />
           <p className="font-bold text-inherit">REVANCED MINI</p>
@@ -54,7 +53,10 @@ const Nav = () => {
       <NavbarContent justify="end">
         <NavbarItem className="flex gap-2">
           <ThemeSwitch />
-          <Link className="rounded-xl bg-default-100 hover:bg-default-200 p-2 cursor-pointer">
+          <Link
+            className="rounded-xl bg-default-100 hover:bg-default-200 p-2 cursor-pointer"
+            href="https://github.com/abdarker/Revanced-Extended"
+          >
             <svg
               xmlns="http://www.w3.org/2000/svg"
               className="text-black dark:text-white"

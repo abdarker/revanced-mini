@@ -1,9 +1,10 @@
 import InfoCard from "@/components/card";
 import Footer from "./_components/footer";
 // https://api.github.com/repos/abdarker/revanced-magisk-module/releases/latest
+// https://api.github.com/repos/revanced-apks/build-apps/releases/latest
 export default async function Page() {
   const res = await fetch(
-    "https://api.github.com/repos/revanced-apks/build-apps/releases/latest"
+    "https://api.github.com/repos/abdarker/revanced-magisk-module/releases/latest"
   );
   const data: any = await res.json();
 
